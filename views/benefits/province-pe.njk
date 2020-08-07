@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block body %}
-  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+  <p>{{ __('province-pe.body') }}</p>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "province-pe",
     "https://www.princeedwardisland.ca/en/topic/covid-19-supports-and-services",
-    "Learn more about PEI benefits"
+    __('infolink.province.princeedwardisland')
   )}}
 {% endblock %}

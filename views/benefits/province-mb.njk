@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block body %}
-  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+  <p>{{ __('province-mb.body') }}</p>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "province-mb",
     "https://www.gov.mb.ca/covid19/infomanitobans/index.html#individuals",
-    "Learn more about Manitoba benefits"
+    __('infolink.province.manitoba')
   )}}
 {% endblock %}

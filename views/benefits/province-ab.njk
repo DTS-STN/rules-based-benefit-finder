@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block body %}
-  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+  <p>{{ __('province-ab.body') }}</p>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "province-ab",
     "https://www.alberta.ca/covid-19-supports-for-albertans.aspx",
-    "Learn more about Alberta’s response"
+    __('infolink.province.alberta')
   )}}
 {% endblock %}

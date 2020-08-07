@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block body %}
-  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+  <p>{{ __('province-nl.body') }}</p>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "province-nl",
     "https://www.gov.nl.ca/covid-19/resources/",
-    "Learn more about Newfoundland and Labrador’s response"
+    __('infolink.province.newfoundland')
   )}}
 {% endblock %}

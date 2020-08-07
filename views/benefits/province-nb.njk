@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block body %}
-  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+  <p>{{ __('province-nb.body') }}</p>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "province-nb",
     "https://www2.gnb.ca/content/gnb/en/corporate/promo/covid-19.html",
-    "Learn more about New Brunswick’s response"
+    __('infolink.province.newbrunswick')
   )}}
 {% endblock %}

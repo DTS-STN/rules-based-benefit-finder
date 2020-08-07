@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block body %}
-  <p>Some provincial governments are offering additional support for people during COVID-19.</p>
+  <p>{{ __('province-ns.body') }}</p>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "province-ns",
     "https://novascotia.ca/coronavirus/support/",
-    "Learn more about Nova Scotia benefits"
+    __('infolink.province.novascotia')
   )}}
 {% endblock %}

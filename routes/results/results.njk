@@ -63,7 +63,7 @@
 
             <div data-cy="other-benefits-list">
                 {% if provincial %}
-                    {% include "benefits/" + provincial + "-" + getLocale() +  ".njk" %}
+                    {% include "benefits/" + provincial + ".njk" %}
                 {% endif %}
                 {% include "benefits/gst_credit-" + getLocale() + ".njk" %}
             </div>

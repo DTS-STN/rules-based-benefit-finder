@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block body %}
-  <p>Some provincial and territorial governments are offering additional support for people during COVID-19.</p>
+  <p>{{ __('province-nu.body') }}</p>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "province-nu",
     "https://www.gov.nu.ca/health/information/covid-19-novel-coronavirus",
-    "Learn more about Nunavut’s response"
+    __('infolink.province.nunavut')
   )}}
 {% endblock %}
