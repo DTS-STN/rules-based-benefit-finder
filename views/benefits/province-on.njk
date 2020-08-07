@@ -7,11 +7,11 @@
 {% endblock %}
 
 {% block body %}
-  <p>{{ __('province-on.body') }}</p>
+  <p>Some provincial and territorial governments are offering additional support for people during COVID-19.</p>
 
-  <strong>{{ __('province-on.body.goodtoknow') }}</strong>
+  <strong>Good to know:</strong>
   <ul>
-    <li>{{ __('province-on.body.goodtoknow.1') | safe }}</li>
+    <li>Information for <a href="https://www.ontario.ca/page/covid-19-support-workers" target="_blank">health care workers and others who are working in Ontario</a>.</li>
   </ul>
 {% endblock %}
 
@@ -19,6 +19,6 @@
   {{ infoLink(
     "province-on",
     "https://www.ontario.ca/page/covid-19-support-people",
-    __('infolink.province.ontario')
+    "Learn more about Ontario benefits"
   )}}
 {% endblock %}
