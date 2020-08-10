@@ -7,23 +7,23 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("<strong>Payments automatically paused</strong>") }}
-  {{ benefitLi("<strong>From March 30, 2020 until September 30, 2020</strong>") }}
+  {{ benefitLi("<strong>" + __('student_loan.featurelist.1') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_loan.featurelist.2') + "</strong>") }}
 {% endblock %}
 
 {% block body %}
-  <strong>Good to know:</strong>
+  <strong>{{ __('student_loan.goodtoknow') }}</strong>
   <ul>
-    <li>You don’t need to apply to pause your payments.</li>
-    <li> Pre-authorized payments are stopped.</li>
-    <li> Log in to your <a href='https://www.csnpe-nslsc.canada.ca/en/home' target='_blank'>National Student Loans Service Centre</a> account to see how much you will save.</li>
+    <li>{{ __('student_loan.body.1') }}</li>
+    <li>{{ __('student_loan.body.2') }}</li>
+    <li>{{ __('student_loan.body.3') | safe }}</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "student_loan",
-    "https://www.csnpe-nslsc.canada.ca/en/home",
-    "Learn more about help with student loan payments"
+    __('student_loan.infolink'),
+    __('student_loan.infolink_text')
   )}}
 {% endblock %}

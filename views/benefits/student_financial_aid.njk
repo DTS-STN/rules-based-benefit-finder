@@ -7,31 +7,31 @@
 {% endblock %}
 
 {% block preamble %}
-  Increasing Canada Student Grants and Loans
+  {{ __('student_financial_aid.preamble') }
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("<strong>Up to $6,000 in grants for full-time students</strong>") }}
-  {{ benefitLi("<strong>Up to $3,600 in grants for part-time students</strong>") }}
-  {{ benefitLi("<strong>Doubling grants for students with dependants</strong>") }}
-  {{ benefitLi("<strong>Doubling grants for students with permanent disabilities</strong>") }}
-  {{ benefitLi("<strong>Removing expected contributions from students and spouses</strong>") }}
-  {{ benefitLi("<strong>Up to $350 for the weekly amount in student loans</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.1') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.2') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.3') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.4') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.5') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.6') + "</strong>") }}
 {% endblock %}
 
 {% block body %}
-  <strong>Good to know:</strong>
+  <strong>{{ __('student_financial_aid.body.goodtoknow') }}</strong>
   <ul>
-    <li>This financial aid starts August 1, 2020.</li>
-    <li>It’s available for 1 year.</li>
-    <li>You can apply <a href="https://www.canada.ca/en/services/benefits/education/student-aid/grants-loans/province-apply.html" target="_blank">in your province or territory of residence</a>.</li>
+    <li>{{ __('student_financial_aid.body.1') }}</li>
+    <li>{{ __('student_financial_aid.body.2') }}</li>
+    <li>{{ __('student_financial_aid.body.3') | safe}}</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "student_financial_aid",
-    "https://www.canada.ca/en/services/benefits/education/student-aid/notice-covid-19.html",
-    "Read more about financial aid for students"
+    __('student_financial_aid.infolink'),
+    __('student_financial_aid.infolink_text')
   )}}
 {% endblock %}
