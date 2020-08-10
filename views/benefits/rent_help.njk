@@ -8,15 +8,15 @@
 
 {% block body %}
   <ul>
-    <li>Provincial governments are in charge of rental housing rules.</li>
-    <li> In most provinces and territories, you cannot be evicted for not paying rent.</li>
+    <li>{{ __('rent_help.body.1') }}</li>
+    <li>{{ __('rent_help.body.2') }}</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "rent_help",
-    "https://www.cmhc-schl.gc.ca/en/rental-housing/covid-19-eviction-bans-and-suspensions-to-support-renters",
-    "Check with your provincial government for more details"
+    __('rent_help.infolink'),
+    __('rent_help.infolink_text')
   )}}
 {% endblock %}

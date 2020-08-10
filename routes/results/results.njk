@@ -6,13 +6,6 @@
 {%- from 'benefit-result.njk' import infoLink as infoLink with context -%}
 
 {% block content %}
-
-    {# <div class="flex flex-row">
-        <div class="inline -mt-12">
-            <a class="ml-6 py-3 button-link transparent" href="/clear"><img src="{{ asset('/img/times-circle.svg') }}" class="h-6 w-6" alt="" /><span>{{ __('start_over') }}</span></a>
-        </div>
-    </div> #}
-
     <h1>{{ __('results.header') }}</h1>
 
     {% if not data.lost_job %}
