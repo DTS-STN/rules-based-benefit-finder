@@ -9,30 +9,26 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("<ul>
-    <li class='mb-2'><strong>$300 one-time, tax-free payment if you received the one-time payment for the Old Age Security (OAS) pension</strong></li>
-    <li><strong>OR</strong></li>
-    <li><strong>$100 one-time tax-free payment if you received the $500 one-time seniors payment for both the OAS pension and the Guaranteed Income Supplement (GIS).</strong></li>
-  </ul>") }}
-  {{ benefitLi("<strong>We expect to issue the payments beginning this fall. You don’t need to do anything to receive it.</strong>") }}
+  {{ benefitLi(__('dtc_oas.featurelist.1')) }}
+  {{ benefitLi("<strong>" + __('dtc_oas.featurelist.2') + "</strong>") }}
 {% endblock %}
 
 {% block body %}
-  <strong>Good to know:</strong>
+  <strong>{{ __('dtc_oas.goodtoknow') }}</strong>
   <ul>
-    <li>You are eligible for this payment if you are a beneficiary as of July 1, 2020 of:
+    <li>{{ __('dtc_oas.body.1') }}
       <ul>
-        <li>Canada Pension Plan Disability</li>
-        <li>Quebec Pension Plan Disability Pension, or</li>
-        <li>One of the disability supports provided by Veterans Affairs Canada Disability Pension:
+        <li>{{ __('dtc_oas.body.1.1') }}</li>
+        <li>{{ __('dtc_oas.body.1.2') }}</li>
+        <li>{{ __('dtc_oas.body.1.3') }}
           <ul>
-            <li>Disability Pension</li>
-            <li>Disability Award</li>
-            <li>Pain and Suffering Compensation</li>
-            <li>Critical Injury Benefit</li>
-            <li>Rehabilitation Services and Vocational Assistance Program</li>
-            <li>Income Replacement Benefit, and/or</li>
-            <li>Canadian Forces Income Support</li>
+            <li>{{ __('dtc_oas.body.1.3.1') }}</li>
+            <li>{{ __('dtc_oas.body.1.3.2') }}</li>
+            <li>{{ __('dtc_oas.body.1.3.3') }}</li>
+            <li>{{ __('dtc_oas.body.1.3.4') }}</li>
+            <li>{{ __('dtc_oas.body.1.3.5') }}</li>
+            <li>{{ __('dtc_oas.body.1.3.6') }}</li>
+            <li>{{ __('dtc_oas.body.1.3.7') }}</li>
           </ul>
         </li>
       </ul>
@@ -43,7 +39,7 @@
 {% block info_link %}
   {{ infoLink(
     "dtc_oas",
-    "https://www.canada.ca/en/services/benefits/covid19-emergency-benefits/one-time-payment-persons-disabilities.html",
-    "Learn more about the Disability Tax Credit"
+    __('dtc_oas.infolink'),
+    __('dtc_oas.infolink_text')
   )}}
 {% endblock %}
