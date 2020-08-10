@@ -202,9 +202,11 @@ const getAllBenefits = (featureFlags) => {
     ignore,
   })
 
+  console.log(files)
+
   // Grab the benefit name portion of the filename
   files.forEach((file) => {
-    const fileParts = file.split('-')
+    const fileParts = file.split('.')
     benefitList.push(fileParts[0])
   })
 
