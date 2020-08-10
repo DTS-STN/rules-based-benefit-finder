@@ -9,23 +9,23 @@
 {% endblock %}
 
 {% block featured_list_items %}
-  {{ benefitLi("<strong>$600 one-time, tax-free payment.</strong>") }}
-  {{ benefitLi("<strong>We expect to issue the payments beginning this fall.</strong>") }}
+  {{ benefitLi("<strong>" + __('dtc_child.featurelist.1') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('dtc_child.featurelist.2') + "</strong>") }}
 {% endblock %}
 
 {% block body %}
-  <strong>Good to know:</strong>
+  <strong>{{ __('dtc_child.godtoknow') }}</strong>
   <ul>
-    <li>You are eligible for this payment if you hold a valid certificate for the Disability Tax Credit for your child.</li>
-    <li>We expect to issue the payments beginning this fall. You don’t need to do anything to receive it.</li>
-    <li>If you share custody for your child, this payment will be split $300 to each parent.</li>
+    <li>{{ __('dtc_child.body.1') }}</li>
+    <li>{{ __('dtc_child.body.2') }}</li>
+    <li>{{ __('dtc_child.body.3') }}</li>
   </ul>
 {% endblock %}
 
 {% block info_link %}
   {{ infoLink(
     "dtc_child",
-    "https://www.canada.ca/en/services/benefits/covid19-emergency-benefits/one-time-payment-persons-disabilities.html",
-    "Learn more about the Disability Tax Credit"
+    __('dtc_child.infolink'),
+    __('dtc_child.infolink_text')
   )}}
 {% endblock %}
