@@ -35,7 +35,7 @@
 
                 <div data-cy="eligible-benefit-list">
                     {% for benefit in benefits %}
-                        {% include "benefits/" + benefit + "-" + getLocale() +  ".njk" %}
+                        {% include "benefits/" + benefit  +  ".njk" %}
                     {% endfor %}
                 </div>
             </div>
@@ -58,7 +58,7 @@
                 {% if provincial %}
                     {% include "benefits/" + provincial + ".njk" %}
                 {% endif %}
-                {% include "benefits/gst_credit-" + getLocale() + ".njk" %}
+                {% include "benefits/gst_credit-" + ".njk" %}
             </div>
         </div>
 
