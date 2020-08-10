@@ -1,8 +1,8 @@
-const  getBenefits  = (data) => require('./getBenefits').getBenefits(data, {enableDtc: true})
+const getBenefits = (data) =>
+  require('./getBenefits').getBenefits(data, { enableDtc: true })
 const { getProvincialBenefits } = require('./getBenefits')
 
 describe('Test the getBenefits calculator', () => {
-
   test('It checks ei regular + cerb path + lost job', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',
@@ -12,20 +12,19 @@ describe('Test the getBenefits calculator', () => {
     expect(result).toContain('cerb')
   })
 
-
   test('It checks ei regular + cerb path + employer closed', () => {
     const result = getBenefits({
       lost_job: 'lost-all-income',
       no_income: 'employer-closed',
     })
-    
+
     expect(result).toContain('cerb')
   })
 
   test('It checks ei regular + cerb some-income path', () => {
     const incomes = ['hours-reduced', 'employed-lost-a-job']
 
-    incomes.forEach(income => {
+    incomes.forEach((income) => {
       const result = getBenefits({
         lost_job: 'lost-some-income',
         some_income: income,
@@ -34,9 +33,7 @@ describe('Test the getBenefits calculator', () => {
 
       expect(result).toContain('cerb')
     })
-
   })
-
 
   test('It checks ei sickness + cerb path', () => {
     const result = getBenefits({
@@ -55,7 +52,7 @@ describe('Test the getBenefits calculator', () => {
       'ei-recently-claim-ended',
     ]
 
-    options.forEach(income => {
+    options.forEach((income) => {
       const result = getBenefits({
         lost_job: 'lost-all-income',
         no_income: income,
@@ -66,7 +63,6 @@ describe('Test the getBenefits calculator', () => {
   })
 
   test('It checks cerb for some-income answers', () => {
-
     const result = getBenefits({
       lost_job: 'lost-some-income',
       some_income: 'selfemployed-some-income',
@@ -74,7 +70,6 @@ describe('Test the getBenefits calculator', () => {
     })
 
     expect(result).toContain('cerb')
-
   })
 
   test('Quarantine Lost some ', () => {
@@ -87,7 +82,6 @@ describe('Test the getBenefits calculator', () => {
   })
 
   test('It checks cerb-only path 3', () => {
-
     const result = getBenefits({
       gross_income: 'over_5k',
     })
@@ -96,7 +90,6 @@ describe('Test the getBenefits calculator', () => {
   })
 
   test('It checks the ei-workshare add-on', () => {
-
     const result = getBenefits({
       lost_job: 'lost-some-income',
       some_income: 'hours-reduced',
@@ -105,7 +98,6 @@ describe('Test the getBenefits calculator', () => {
 
     expect(result).toContain('ei_workshare')
   })
-
 
   test('It checks the mortgage addon', () => {
     const result = getBenefits({
@@ -126,7 +118,7 @@ describe('Test the getBenefits calculator', () => {
   test('It checks the ccb addon', () => {
     const options = ['yes', 'unsure']
 
-    options.forEach(ccb => {
+    options.forEach((ccb) => {
       const result = getBenefits({
         ccb: ccb,
       })
@@ -156,7 +148,7 @@ describe('Test the getBenefits calculator', () => {
   test('It checks the oas addon', () => {
     const options = ['oas', 'allowance', 'survivor']
 
-    options.forEach(oas => {
+    options.forEach((oas) => {
       const result = getBenefits({
         oas: oas,
       })
@@ -209,7 +201,21 @@ describe('Test the getBenefits calculator', () => {
   })
 
   test('It checks provincial benefits', () => {
-    const provinces = ['ab', 'bc', 'mb', 'nb', 'nl', 'ns', 'nt', 'nu', 'on', 'pe', 'qc', 'sk', 'yt']
+    const provinces = [
+      'ab',
+      'bc',
+      'mb',
+      'nb',
+      'nl',
+      'ns',
+      'nt',
+      'nu',
+      'on',
+      'pe',
+      'qc',
+      'sk',
+      'yt',
+    ]
 
     provinces.forEach((province) => {
       const result = getProvincialBenefits({
