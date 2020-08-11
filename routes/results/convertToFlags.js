@@ -1,8 +1,8 @@
 // add date time for each of the options
 function convertToFlags(data, flagMap) {
-  const todaysDateObj = new Date(Date.now())
-  const isoString = todaysDateObj.toISOString()
-  const dateString = isoString.split('T')[0]
+  const dateString = new Date(Date.now())
+    .toISOString()
+    .split('T')[0]
 
   if (data && typeof data === 'object') {
     return Object.keys(data).reduce(
