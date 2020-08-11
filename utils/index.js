@@ -7,6 +7,7 @@ const viewHelpers = require('./view.helpers.js')
 const flashMessageHelpers = require('./flash.message.helpers')
 const loadHelpers = require('./load.helpers')
 const history = require('./history.helpers')
+const openfisca = require("./openfisca.config")
 
 module.exports = {
   ...routeHelpers,
@@ -19,6 +20,7 @@ module.exports = {
   ...dataHelpers,
   ...loadHelpers,
   ...history,
+  ...openfisca,
 }
 
 const { getRouteByName } = require('./route.helpers')
