@@ -62,6 +62,7 @@ module.exports = (app, route) => {
           if (fiscaRes.ok) {
             return fiscaRes.json()
           } else {
+            res.status(500)
             res.render('500', {
               message: 'OpenFisca returned a bad response',
             })
@@ -111,6 +112,7 @@ module.exports = (app, route) => {
           }
         })
         .catch(() => {
+          res.status(500)
           res.render('500', {
             message: 'OpenFisca returned a bad response',
           })
