@@ -21,7 +21,7 @@ Explore it here: [https://covid-benefits.alpha.canada.ca](https://covid-benefits
 * Canada Child Benefit
 * One-time payments for OAS and GIS recipients 
 * Reduced minimum withdrawals for Registered Retirement Income Funds
-* Financial aid for 2021 school year
+* Financial aid for 2021 school year 
 * GST tax credit
 
 This product is updated frequently. Notable updates are captured in [the changelog](/CHANGELOG.md).
