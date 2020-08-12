@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this product will be documented in this file.
 
+## 2020-08-11
+
+### Changed
+* Unified and implemented the i18n framework for results cards 
+
 ## 2020-08-4
 
 ### Changed

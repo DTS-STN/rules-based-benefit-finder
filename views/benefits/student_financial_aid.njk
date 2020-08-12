@@ -1,0 +1,37 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'student_financial_aid' %}
+
+{% block header %}
+  {{__("student_financial_aid.header")}}
+{% endblock %}
+
+{% block preamble %}
+  {{ __('student_financial_aid.preamble') }}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.1') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.2') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.3') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.4') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.5') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_financial_aid.benefitlist.6') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>{{ __('student_financial_aid.body.goodtoknow') }}</strong>
+  <ul>
+    <li>{{ __('student_financial_aid.body.1') }}</li>
+    <li>{{ __('student_financial_aid.body.2') }}</li>
+    <li>{{ __('student_financial_aid.body.3') | safe }}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "student_financial_aid",
+    __('student_financial_aid.infolink'),
+    __('student_financial_aid.infolink_text')
+  )}}
+{% endblock %}

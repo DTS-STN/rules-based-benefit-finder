@@ -1,0 +1,28 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'mortgage_deferral' %}
+
+{% block header %}
+  {{__("mortgage_deferral.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('mortgage_payments.featurelist.1') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>{{ __('mortgage_payments.goodtoknow') }}</strong>
+  <ul>
+    <li>{{ __('mortgage_payments.body.1') }}</li>
+    <li>{{ __('mortgage_payments.body.2') }}</li>
+    <li>{{ __('mortgage_payments.body.3') }}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "mortgage_deferral",
+    __('mortgage_payments.infolink'),
+    __('mortgage_payments.infolink_text')
+  )}}
+{% endblock %}

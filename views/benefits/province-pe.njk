@@ -1,0 +1,19 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'province-pe' %}
+
+{% block header %}
+  {{__("province-pe.header")}}
+{% endblock %}
+
+{% block body %}
+  <p>{{ __('province-pe.body') }}</p>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "province-pe",
+    __('province.princeedwardisland.infolink'),
+    __('province.princeedwardisland.infolink_text')
+  )}}
+{% endblock %}

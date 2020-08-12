@@ -1,0 +1,31 @@
+
+
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'dtc_child' %}
+
+{% block header %}
+  {{__("dtc.title")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('dtc_child.featurelist.1') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('dtc_child.featurelist.2') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>{{ __('dtc_child.godtoknow') }}</strong>
+  <ul>
+    <li>{{ __('dtc_child.body.1') }}</li>
+    <li>{{ __('dtc_child.body.2') }}</li>
+    <li>{{ __('dtc_child.body.3') }}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "dtc_child",
+    __('dtc_child.infolink'),
+    __('dtc_child.infolink_text')
+  )}}
+{% endblock %}

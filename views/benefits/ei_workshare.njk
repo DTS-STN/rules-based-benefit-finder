@@ -1,0 +1,33 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'ei_workshare' %}
+
+{% block header %}
+  {{__("ei_workshare.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('ei_workshare.featurelist.1') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('ei_workshare.featurelist.2') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>{{ __('ei_workshare.body.list1.title') }}</strong>
+  <ul>
+    <li>{{ __('ei_workshare.body.list1.1') }}</li>
+  </ul>
+
+  <strong>{{ __('ei_workshare.body.list2.title') }}</strong>
+  <ul>
+    <li>{{ __('ei_workshare.body.list2.1') }}</li>
+    <li>{{ __('ei_workshare.body.list2.2') }}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "ei_workshare",
+    __('ei_workshare.infolink'),
+    __('ei_workshare.infolink_text')
+  )}}
+{% endblock %}

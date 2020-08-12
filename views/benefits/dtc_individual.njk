@@ -1,0 +1,46 @@
+
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'dtc_individual' %}
+
+{% block header %}
+  {{__("dtc.title")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('dtc_individual.featurelist.1') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('dtc_individual.featurelist.2') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>{{ __('dtc_individual.goodtoknow') }}</strong>
+  <ul>
+    <li>{{ __('dtc_individual.body.1') }}</li>
+    <li>{{ __('dtc_individual.body.2') }}
+      <ul>
+        <li>{{ __('dtc_individual.body.2.1') }}</li>
+        <li>{{ __('dtc_individual.body.2.2') }}</li>
+        <li>{{ __('dtc_individual.body.2.3') }}
+          <ul>
+            <li>{{ __('dtc_individual.body.2.3.1') }}</li>
+            <li>{{ __('dtc_individual.body.2.3.2') }}</li>
+            <li>{{ __('dtc_individual.body.2.3.3') }}</li>
+            <li>{{ __('dtc_individual.body.2.3.4') }}</li>
+            <li>{{ __('dtc_individual.body.2.3.5') }}</li>
+            <li>{{ __('dtc_individual.body.2.3.6') }}</li>
+            <li>{{ __('dtc_individual.body.2.3.7') }}</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>{{ __('dtc_individual.body.3') }}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "dtc_individual",
+    __('dtc_individual.infolink'),
+    __('dtc_individual.infolink_text')
+  )}}
+{% endblock %}

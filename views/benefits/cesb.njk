@@ -1,0 +1,40 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'cesb' %}
+
+{% block header %}
+  {{__("cesb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('cesb.featurelist.1') + "</strong>") }}
+  {{ benefitLi(__('cesb.featurelist.2'))}}
+{% endblock %}
+
+{% block body %}
+  <strong>{{ __('cesb.body.list1.title') }}</strong>
+  <ul>
+    <li>{{ __('cesb.body.list1.1') }}</li>
+    <li>{{ __('cesb.body.list1.2') }}</li>
+  </ul>
+
+  <strong>{{ __('cesb.body.list2.title') }}</strong>
+  <ul>
+    <li>{{ __('cesb.body.list2.1') }}</li>
+    <li>{{ __('cesb.body.list2.2') }}</li>
+  </ul>
+
+  <strong>{{ __('cesb.body.list3.title') }}</strong>
+  <ul>
+    <li>{{ __('cesb.body.list3.1') }}</li>
+    <li>{{ __('cesb.body.list3.2') }}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "cesb",
+    __('cesb.infolink'),
+    __('cesb.infolink_text')
+  )}}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'gst_credit' %}
+
+{% block header %}
+  {{ __("gst_credit.header") }}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('gst_credit.featurelist.1') + "</strong>") }}
+  {{ benefitLi(__('gst_credit.featurelist.2')) }}
+  {{ benefitLi("<strong>" + __('gst_credit.featurelist.3') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>{{ __('gst_credit.goodtoknow') }}</strong>
+  <ul>
+    <li>{{ __('gst_credit.body.1') }}</li>
+    <li>{{ __('gst_credit.body.2') }}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink("gst_credit",
+    __('gst_credit.infolink'),
+    __('gst_credit.infolink_text')
+  )}}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'dtc_apply' %}
+
+{% block header %}
+  {{__("dtc.title")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('dtc_apply.featurelist.1') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('dtc_apply.featurelist.2') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('dtc_apply.featurelist.3') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('dtc_apply.featurelist.4') + "</strong>") }}
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "dtc_apply",
+    __('dtc_apply.infolink'),
+    __('dtc_apply.infolink_text')
+  )}}
+{% endblock %}

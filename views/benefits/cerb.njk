@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'cerb' %}
+
+{% block header %}
+  {{__("cerb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('cerb.featurelist.1') + "</strong>") }}
+  {{ benefitLi(__('cerb.featurelist.2') | safe) }}
+  {{ benefitLi("<strong>" + __('cerb.featurelist.3') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>{{__("cerb.body.title")}}</strong>
+  <ul>
+    <li>{{__("cerb.body.1")}}</li>
+    <li>{{__("cerb.body.2")}}</li>
+    <li>{{__("cerb.body.3")}}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "cerb",
+      __('cerb.infolink'),
+      __('cerb.infolink_text')
+  )}}
+{% endblock %}

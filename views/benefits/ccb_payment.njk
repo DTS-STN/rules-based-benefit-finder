@@ -1,0 +1,33 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'ccb_payment' %}
+
+{% block header %}
+  {{__("ccb_payment.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('ccb.featurelist.1') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('ccb.featurelist.2') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>{{ __('ccb.body.list1.title') }}</strong>
+  <ul>
+    <li>{{ __('ccb.body.list1.1') }}</li>
+  </ul>
+
+  <strong>{{ __('ccb.body.list2.title') }}</strong>
+  <ul>
+    <li>{{ __('ccb.body.list2.1') }}</li>
+    <li>{{ __('ccb.body.list2.2') | safe }}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "ccb_payment",
+      __('ccb.infolink'),
+      __('ccb.infolink_text')
+  )}}
+{% endblock %}

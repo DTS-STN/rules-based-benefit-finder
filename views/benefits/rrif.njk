@@ -1,0 +1,21 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'rrif' %}
+
+{% block header %}
+  {{__("rrif.header") }}
+{% endblock %}
+
+{% block body %}
+  <ul>
+    <li>{{ __('rrif.body.1') }}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "rrif",
+    __('rrif.infolink'),
+    __('rrif.infolink_text')
+  )}}
+{% endblock %}

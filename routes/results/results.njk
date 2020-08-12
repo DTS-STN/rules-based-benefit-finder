@@ -6,13 +6,6 @@
 {%- from 'benefit-result.njk' import infoLink as infoLink with context -%}
 
 {% block content %}
-
-    {# <div class="flex flex-row">
-        <div class="inline -mt-12">
-            <a class="ml-6 py-3 button-link transparent" href="/clear"><img src="{{ asset('/img/times-circle.svg') }}" class="h-6 w-6" alt="" /><span>{{ __('start_over') }}</span></a>
-        </div>
-    </div> #}
-
     <h1>{{ __('results.header') }}</h1>
 
     {% if not data.lost_job %}
@@ -42,7 +35,7 @@
 
                 <div data-cy="eligible-benefit-list">
                     {% for benefit in benefits %}
-                        {% include "benefits/" + benefit + "-" + getLocale() +  ".njk" %}
+                        {% include "benefits/" + benefit + ".njk" %}
                     {% endfor %}
                 </div>
             </div>
@@ -63,9 +56,9 @@
 
             <div data-cy="other-benefits-list">
                 {% if provincial %}
-                    {% include "benefits/" + provincial + "-" + getLocale() +  ".njk" %}
+                    {% include "benefits/" + provincial + ".njk" %}
                 {% endif %}
-                {% include "benefits/gst_credit-" + getLocale() + ".njk" %}
+                {% include "benefits/gst_credit" + ".njk" %}
             </div>
         </div>
 
@@ -98,7 +91,7 @@
 
             <div class="benefits__list mt-4" id="unavailableBenefitsList" aria-labelledby="unavailableBenefitsButton">
                 {% for benefit in unavailableBenefits %}
-                    {% include "benefits/" + benefit + "-" + getLocale() +  ".njk" %}
+                    {% include "benefits/" + benefit + ".njk" %}
                 {% endfor %}
             </div>
         </div>

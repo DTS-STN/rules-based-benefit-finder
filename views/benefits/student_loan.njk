@@ -1,0 +1,29 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'student_loan' %}
+
+{% block header %}
+  {{__("student_loan.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('student_loan.featurelist.1') + "</strong>") }}
+  {{ benefitLi("<strong>" + __('student_loan.featurelist.2') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>{{ __('student_loan.goodtoknow') }}</strong>
+  <ul>
+    <li>{{ __('student_loan.body.1') }}</li>
+    <li>{{ __('student_loan.body.2') }}</li>
+    <li>{{ __('student_loan.body.3') | safe }}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+    "student_loan",
+    __('student_loan.infolink'),
+    __('student_loan.infolink_text')
+  )}}
+{% endblock %}
