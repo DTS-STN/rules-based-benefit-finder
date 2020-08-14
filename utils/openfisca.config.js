@@ -74,8 +74,10 @@ const conversionMap = {
       canada_child_benefit__yes_or_unsure: true,
     },
   },
+  ei_workshare: {
+    income_status__has_lost_some_income: true,
+  }
 }
-ei_workshare
 module.exports = {
   conversionMap,
 }
