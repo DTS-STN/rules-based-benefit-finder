@@ -48,10 +48,12 @@ const conversionMap = {
     wfh: {
       working_from_home: true, // not flag for working from home
     },
-    'paid-leave': { //no flag for paid-leave
+    'paid-leave': { 
+      // no flag for paid-leave
       on_paid_leave: true,
     },
-    retired: { //No flag for retired
+    retired: { 
+      // No flag for retired
       retired: true,
     },
     student_2019_20: {
@@ -76,7 +78,7 @@ const conversionMap = {
   },
   ei_workshare: {
     income_status__has_lost_some_income: true,
-  }
+  },
 }
 module.exports = {
   conversionMap,
