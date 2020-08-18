@@ -2,7 +2,7 @@
 function convertToFlags(data, flagMap) {
   const dateString = new Date(Date.now())
     .toISOString()
-    .split('T')[0]
+    .slice(0, 7)
 
   if (data && typeof data === 'object') {
     return Object.keys(data).reduce(
@@ -38,43 +38,34 @@ function convertToFlags(data, flagMap) {
         return obj
       },
       {
-        cerb_eligible: {
+        cerb__is_eligible: {
           [dateString]: null,
         },
-        cesb_eligible: {
+        cesb__is_eligible: {
           [dateString]: null,
         },
-        ei_workshare_eligible: {
+        ei_workshare__is_eligible: {
           [dateString]: null,
         },
-        mortgage_deferral_eligible: {
+        mortgage_deferral__is_eligible: {
           [dateString]: null,
         },
-        rent_help_eligible: {
+        rent__is_eligible: {
           [dateString]: null,
         },
-        student_loan_eligible: {
+        student_loan__is_eligible: {
           [dateString]: null,
         },
-        ccb_payment_eligible: {
+        oas__is_eligible: {
           [dateString]: null,
         },
-        oas_eligible: {
+        dtc__is_eligible_for_dtc_and_oas: {
           [dateString]: null,
         },
-        dtc_oas_eligible: {
+        dtc__is_eligible: {
           [dateString]: null,
         },
-        dtc_individual_eligible: {
-          [dateString]: null,
-        },
-        dtc_child_eligible: {
-          [dateString]: null,
-        },
-        rrif_eligible: {
-          [dateString]: null,
-        },
-        student_financial_aid_eligible: {
+        student_financial_help__is_eligible: {
           [dateString]: null,
         },
       },
