@@ -68,6 +68,9 @@ function convertToFlags(data, flagMap) {
         student_financial_help__is_eligible: {
           [dateString]: null,
         },
+        riff__is_eligible: {
+          [dateString]: null,
+        },
       },
     )
   }
