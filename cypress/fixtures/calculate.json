@@ -1,0 +1,123 @@
+{
+  "persons": {
+      "person": {
+          "income_status_reason__has_lost_job": {
+              "2018-06": true
+          },
+          "income_status_reason__has_employer_closed": {
+              "2018-06": true
+          },
+          "income_status_reason__has_unpaid_leave_to_care_for_child_or_sick": {
+              "2018-06": true
+          },
+          "income_status_reason__has_parental_recently_cant_return_to_work": {
+              "2018-06": true
+          },
+          "income_status_reason__has_ei_recent_claim_ended": {
+              "2018-06": true
+          },
+          "income_status_reason__is_quarantined": {
+              "2018-06": true
+          },
+          "income_status_reason__has_hours_reduced": {
+              "2018-06": true
+          },
+          "income_status_reason__employed_lost_a_job": {
+              "2018-06": true
+          },
+          "income_status_reason__has_1000_or_less": {
+              "2018-06": true
+          },
+          "income_status_reason__has_1001_or_more": {
+              "2018-06": true
+          },
+          "income_status_reason__is_self_employed": {
+              "2018-06": true
+          },
+          "income_status_reason__is_gross_income_over_5k": {
+              "2018-06": true
+          },
+          "income_status__has_lost_all_income": {
+              "2018-06": false
+          },
+          "income_status__has_lost_some_income": {
+              "2018-06": false
+          },
+          "income_status__has_lost_no_income": {
+              "2018-06": false
+          },
+          "cerb__is_eligible": {
+              "2018-06": true
+          },
+          "student_lost_job": {
+              "2018-06": true
+          },
+          "has_no_income_before": {
+              "2018-06": true
+          },
+          "cesb__is_eligible": {
+              "2018-06": true
+          },
+          "student_loan__has_student_debt": {
+              "2018-06": true
+          },
+          "student_loan__is_eligible": {
+              "2018-06": true
+          },
+          "student_financial_help__has_plan_for_school": {
+              "2018-06": true
+          },
+          "student_financial_help__is_eligible": {
+              "2018-06": true
+          },
+          "canada_child_benefit__yes_or_unsure": {
+              "2018-06": true
+          },
+          "canada_child_benefit__is_eligible": {
+              "2018-06": true
+          },
+          "ei_workshare__is_eligible": {
+              "2018-06": true
+          },
+          "mortgage_deferral__has_mortgage_payments": {
+              "2018-06": true
+          },
+          "mortgage_deferral__is_eligible": {
+              "2018-06": true
+          },
+          "rent__has_need_for_rent_help": {
+              "2018-06": true
+          },
+          "rent__is_eligible": {
+              "2018-06": true
+          },
+          "riff__has_riff": {
+              "2018-06": true
+          },
+          "riff__is_eligible": {
+              "2018-06": true
+          },
+          "has_oas": {
+              "2018-06": true
+          },
+          "has_allowance": {
+              "2018-06": true
+          },
+          "has_allowance_for_survivor": {
+              "2018-06": true
+          },
+          "oas__is_eligible": {
+              "2018-06": true
+          },
+          "dtc__has_document": {
+              "2018-06": true
+          },
+          "dtc__is_eligible_for_dtc_and_oas": {
+              "2018-06": true
+          },
+          "dtc__is_eligible": {
+              "2018-06": true
+          }
+      }
+  }
+}
