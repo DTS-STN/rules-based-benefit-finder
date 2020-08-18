@@ -2,56 +2,58 @@
 const conversionMap = {
   lost_job: {
     'lost-all-income': {
-      no_income: true,
+      income_status__has_lost_all_income: true,
     },
     'lost-some-income': {
-      reduced_income: true,
+      income_status__has_lost_some_income: true,
     },
     'lost-no-income': {
-      no_income_lost: true,
+      income_status__has_lost_no_income: true,
     },
   },
   no_income: {
     lost_job: {
-      lost_all_employment: true,
+      income_status_reason__has_lost_job: true,
     },
     employer_closed: {
-      lost_all_employment: true,
+      income_status_reason__has_employer_closed: true,
     },
     'self-employed-closed': {
-      self_employed: true,
+      income_status_reason__has_self_employee_with_no_income: true,
     },
     'unpaid-leave-to-care': {
-      on_familial_unpaid_leave: true,
+      income_status_reason__has_unpaid_leave_to_care_for_child_or_sick: true,
     },
   },
   some_income: {
     'hours-reduced': {
-      employment_hours_reduced: true,
+      income_status_reason__has_hours_reduced: true,
     },
     'selfemployed-some-income': {
-      self_employed: true,
+      income_status_reason__is_self_employed_some_income: true,
     },
     'employed-lost-a-job': {
-      lost_supplementary_employment: true,
+      income_status_reason__employed_lost_a_job: true,
     },
-    retired: {
+    retired: { // No Flag for retired
       retired: true,
       lost_supplementary_employment: true,
     },
     quarantine: {
-      covid_quarantine: true,
-      on_non_voluntary_unpaid_leave: true,
+      income_status_reason__is_quarantined: true,
+      income_status_reason__has_unpaid_leave_to_care_for_child_or_sick: true,
     },
   },
   unchanged_income: {
     wfh: {
-      working_from_home: true,
+      working_from_home: true, // not flag for working from home
     },
-    'paid-leave': {
+    'paid-leave': { 
+      // no flag for paid-leave
       on_paid_leave: true,
     },
-    retired: {
+    retired: { 
+      // No flag for retired
       retired: true,
     },
     student_2019_20: {
@@ -63,21 +65,21 @@ const conversionMap = {
   },
   mortgage_payments: {
     'yes-mortgage': {
-      home_owner: true,
-      mortgage_payment_at_risk: true,
+      mortgage_deferral__has_mortgage_payments: true,
     },
     'yes-rent': {
-      home_owner: false,
-      rent_payment_at_risk: true,
+      rent__has_need_for_rent_help: true,
     },
   },
   ccb: {
     yes: {
-      child_benefit_recipient: true,
+      canada_child_benefit__yes_or_unsure: true,
     },
   },
+  ei_workshare: {
+    income_status__has_lost_some_income: true,
+  },
 }
-
 module.exports = {
   conversionMap,
 }
