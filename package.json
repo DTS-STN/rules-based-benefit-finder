@@ -86,7 +86,7 @@
     "@cdssnc/a11y-tracker-client": "^1.1.2",
     "acorn": "^7.2.0",
     "cheerio": "^1.0.0-rc.3",
-    "cypress": "^4.6.0",
+    "cypress": "^4.12.1",
     "cypress-axe": "^0.8.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
