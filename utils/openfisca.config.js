@@ -35,10 +35,6 @@ const conversionMap = {
     'employed-lost-a-job': {
       income_status_reason__employed_lost_a_job: true,
     },
-    retired: { // No Flag for retired
-      retired: true,
-      lost_supplementary_employment: true,
-    },
     quarantine: {
       income_status_reason__is_quarantined: true,
       income_status_reason__has_unpaid_leave_to_care_for_child_or_sick: true,
@@ -52,15 +48,11 @@ const conversionMap = {
       // no flag for paid-leave
       on_paid_leave: true,
     },
-    retired: { 
-      // No flag for retired
-      retired: true,
-    },
-    student_2019_20: {
-      student_2019_2020: true,
+    student_2019_2020: {
+      is_student_2019_2020: true,
     },
     high_school_grad: {
-      high_school_grad: true,
+      is_high_school_grad: true,
     },
   },
   mortgage_payments: {
@@ -69,6 +61,34 @@ const conversionMap = {
     },
     'yes-rent': {
       rent__has_need_for_rent_help: true,
+    },
+  },
+  gross_income: {
+    'over_5k': {
+      income_status_reason__is_gross_income_over_5k: true,
+    },
+    '4999_or_less': {
+      income_status_reason__is_gross_income_over_5k: false,
+    },
+  },
+  student_debt: {
+    yes: {
+      student_loan__has_student_debt: true,
+    },
+  },
+  plans_for_school: {
+    yes: {
+      student_financial_help__has_plan_for_school: true,
+    },
+  },
+  oas: {
+    yes: {
+      has_oas: true,
+    },
+  },
+  rrif: {
+    yes: {
+      riff__has_riff: true,
     },
   },
   ccb: {
