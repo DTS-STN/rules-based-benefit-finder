@@ -82,8 +82,14 @@ const conversionMap = {
     },
   },
   oas: {
-    yes: {
+    oas: {
       has_oas: true,
+    },
+    allowance: {
+      has_allowance: true,
+    },
+    survivor: {
+      has_allowance_for_survivor: true,
     },
   },
   rrif: {
