@@ -4,10 +4,8 @@ const path = require('path')
 // go through keys and push benefits which have a true key-value pair
 const getBenefits = (data) => {
   const results = {}
-  const dataKeys = Object.keys(data)
   for(const entity in data){
-    for (const i in Object.keys(data[entity])) {
-      const key = dataKeys[i]
+    for (const key in data[entity]) {
       if (key.endsWith('_eligible')) {
         const benefit = key.split('__is_eligible')
         const valuesforBenefit = Object.values(data[entity][key])
