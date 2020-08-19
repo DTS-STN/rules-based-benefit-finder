@@ -2,6 +2,7 @@ const { convertToFlags } = require('./convertToFlags')
 
 describe('Test the convertToFlag data converter', () => {
   let datetimeSpy
+  const dateString = '2020-08'
   beforeEach(() => {
     datetimeSpy = jest.spyOn(Date, 'now')
     datetimeSpy.mockImplementation(() => {
@@ -10,82 +11,308 @@ describe('Test the convertToFlag data converter', () => {
   })
 
   test('It converts data to flags according to the definition', () => {
-    const converterMap = {
-      some_question_key: {
-        'some-defined-answer': {
-          some: true,
-          nice: true,
-          flags: true,
-        },
-      },
-      some_other_question: {
-        'some-answer-not-answered': {
-          not_included: true,
-        },
-      },
-    }
-
-    const data = {
-      some_question_key: 'some-defined-answer',
-      some_other_question: 'not-included',
-      another_question: 'hello',
-    }
-
-    const result = convertToFlags(data, converterMap)
-    expect(result).toEqual({
-      some: {
-        '2020-08-10': true,
-      },
-      nice: {
-        '2020-08-10': true,
+    const conversionMap = {
+      entities: {
+        person: [
+          "some_benefit",
+        ],
       },
       flags: {
-        '2020-08-10': true,
+        some_flag: {
+          person: {
+            "some-value": {
+              my_flag: true,
+            },
+          },
+        },
       },
-      another_question: {
-        '2020-08-10': 'hello',
+    }
+
+    const dataMap = {
+      some_flag: "some-value",
+    }
+
+    const result = convertToFlags(dataMap, conversionMap)
+
+    expect(result).toEqual(
+      {
+        persons: {
+          person: {
+            my_flag: {
+              [dateString]: true,
+            },
+            some_benefit: {
+              [dateString]: null,
+            },
+          },
+        },
       },
-      cerb_eligible: {
-        '2020-08-10': null,
-      },
-      cesb_eligible: {
-        '2020-08-10': null,
-      },
-      ei_workshare_eligible: {
-        '2020-08-10': null,
-      },
-      mortgage_deferral_eligible: {
-        '2020-08-10': null,
-      },
-      rent_help_eligible: {
-        '2020-08-10': null,
-      },
-      student_loan_eligible: {
-        '2020-08-10': null,
-      },
-      ccb_payment_eligible: {
-        '2020-08-10': null,
-      },
-      oas_eligible: {
-        '2020-08-10': null,
-      },
-      dtc_oas_eligible: {
-        '2020-08-10': null,
-      },
-      dtc_individual_eligible: {
-        '2020-08-10': null,
-      },
-      dtc_child_eligible: {
-        '2020-08-10': null,
-      },
-      rrif_eligible: {
-        '2020-08-10': null,
-      },
-      student_financial_aid_eligible: {
-        '2020-08-10': null,
-      },
-    })
+    )
   })
+
+  test('It omits fields that are not defined in the conversion map', () => {
+    const conversionMap = {
+      entities: {
+        person: [
+          "some_benefit",
+        ],
+      },
+      flags: {
+        some_flag: {
+          person: {
+            "some-value": {
+              my_flag: true,
+              my_other_flag: true,
+            },
+          },
+        },
+      },
+    }
+
+    const dataMap = {
+      some_flag: "some-value",
+      some_other_field: "some-other-value",
+    }
+
+    const result = convertToFlags(dataMap, conversionMap)
+
+    expect(result).toEqual(
+      {
+        persons: {
+          person: {
+            my_flag: {
+              [dateString]: true,
+            },
+            my_other_flag: {
+              [dateString]: true,
+            },
+            some_benefit: {
+              [dateString]: null,
+            },
+          },
+        },
+      },
+    )
+
+  })
+
+  test("It omits an entity when there are no fields besides benefits", () =>{
+    const conversionMap = {
+      entities: {
+        person: [
+          "some_benefit",
+        ],
+      },
+      flags: {
+        some_flag: {
+          person: {
+            "some-value": {
+              my_flag: true,
+            },
+          },
+        },
+      },
+    }
+
+    const dataMap = {
+      some_other_field: "some-other-value",
+    }
+
+    const result = convertToFlags(dataMap, conversionMap)
+
+    expect(result).toEqual(
+      {
+        persons: {},
+      },
+    )
+
+  })
+
+  test("It omits fields with values that are not defined in the conversion map", () => {
+    const conversionMap = {
+      entities: {
+        person: [
+          "some_benefit",
+        ],
+      },
+      flags: {
+        some_flag: {
+          person: {
+            "some-value": {
+              my_flag: true,
+            },
+          },
+        },
+      },
+    }
+
+    const dataMap = {
+      some_flag: "some-other-value",
+    }
+
+    const result = convertToFlags(dataMap, conversionMap)
+
+    expect(result).toEqual(
+      {
+        persons: {},
+      },
+    )
+
+
+  })
+
+  test("It supports multiple entities", () => {
+    const conversionMap = {
+      entities: {
+        person: [
+          "some_benefit",
+        ],
+        child: [
+          "some_other_benefit",
+        ],
+      },
+      flags: {
+        some_flag: {
+          person: {
+            "some-value": {
+              my_flag: true,
+            },
+          },
+          child: {
+            "some-value": {
+              my_child_flag: true,
+            },
+          },
+        },
+        some_other_field: {
+          child: {
+            "some-other-value": {
+              my_other_child_flag: true,
+            },
+          },
+        },
+      },
+    }
+
+    const dataMap = {
+      some_flag: "some-value",
+      some_other_field: "some-other-value",
+    }
+
+    const result = convertToFlags(dataMap, conversionMap)
+
+    expect(result).toEqual(
+      {
+        persons: {
+          person: {
+            my_flag: {
+              [dateString]: true,
+            },
+            some_benefit: {
+              [dateString]: null,
+            },
+          },
+          child: {
+            my_child_flag: {
+              [dateString]: true,
+            },
+            my_other_child_flag: {
+              [dateString]: true,
+            },
+            some_other_benefit: {
+              [dateString]: null,
+            },
+          },
+        },
+      },
+    )
+  })
+
+  test("Adds family object when defined", () => {
+    const conversionMap = {
+      entities: {
+        person: [
+          "some_benefit",
+        ],
+        child: [
+          "some_other_benefit",
+        ],
+      },
+      flags: {
+        some_flag: {
+          person: {
+            "some-value": {
+              my_flag: true,
+            },
+          },
+          child: {
+            "some-value": {
+              my_child_flag: true,
+            },
+          },
+        },
+        some_other_field: {
+          child: {
+            "some-other-value": {
+              my_other_child_flag: true,
+            },
+          },
+        },
+      },
+      families: {
+        "f1": {
+          entities: ["person", "child"],
+          data: {
+            "parents": ["person"],
+            "children": ["child"],
+          },
+        },
+      },
+    }
+
+    const dataMap = {
+      some_flag: "some-value",
+      some_other_field: "some-other-value",
+    }
+
+
+    const result = convertToFlags(dataMap, conversionMap)
+
+    expect(result).toEqual(
+      {
+        persons: {
+          person: {
+            my_flag: {
+              [dateString]: true,
+            },
+            some_benefit: {
+              [dateString]: null,
+            },
+          },
+          child: {
+            my_child_flag: {
+              [dateString]: true,
+            },
+            my_other_child_flag: {
+              [dateString]: true,
+            },
+            some_other_benefit: {
+              [dateString]: null,
+            },
+          },
+        },
+        families: {
+          "f1": {
+            "parents": ["person"],
+            "children": ["child"],
+          },
+        },
+      },
+    )
+
+  })
+
+
 
   afterEach(() => {
     datetimeSpy.mockRestore()
