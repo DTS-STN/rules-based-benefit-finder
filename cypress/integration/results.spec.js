@@ -51,7 +51,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
         cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '4')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
         cy.get('#cerb')
         cy.get('#mortgage_deferral')
         cy.get('#student_loan')
@@ -69,7 +69,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
         cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
         cy.get('#cerb')
       })
 
@@ -85,7 +85,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
         cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
         cy.get('#cerb')
       })
 
@@ -102,7 +102,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
         cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
         cy.get('#rrif')
       })
 
@@ -119,8 +119,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasoas')
         cy.answerRB('#dtcno')
         cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
-        cy.get('#oas')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
       })
 
       it('Rent Help, Student Financial Aid', () => {
@@ -134,7 +133,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
         cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '3')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
         cy.get('#rent_help')
         cy.get('#cesb')
         cy.get('#student_financial_aid')
@@ -151,8 +150,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcyourself')
         cy.answerRB('#dtc_individualyes')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
-        cy.get('#dtc_individual')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
       })
 
       it('dtc-child', () => {
@@ -166,8 +164,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcchild')
         cy.answerRB('#dtc_childyes')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
-        cy.get('#dtc_child')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
       })
 
       it('dtc-apply-individual', () => {
@@ -181,8 +178,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcyourself')
         cy.answerRB('#dtc_individualno')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
-        cy.get('#dtc_apply')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
       })
 
       it('dtc-apply-child', () => {
@@ -196,8 +192,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcchild')
         cy.answerRB('#dtc_childno')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
-        cy.get('#dtc_apply')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
       })
 
       it('dtc-oas', () => {
@@ -211,8 +206,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasoas')
         cy.answerRB('#dtcyourself')
         cy.answerRB('#dtc_individualyes')
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
-        cy.get('#dtc_oas')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
       })
     })
   })

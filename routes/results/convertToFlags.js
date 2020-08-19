@@ -1,85 +1,86 @@
+
+const _ = require("lodash")
+
 // add date time for each of the options
 function convertToFlags(data, flagMap) {
   const dateString = new Date(Date.now())
     .toISOString()
-    .split('T')[0]
+    .slice(0, 7)
+
+  const fiscaRequestObj = {
+    persons: {},
+  }
+  const mapEntities = flagMap.entities
+  const mapFamilies = flagMap.families
+  const mapFlags = flagMap.flags
 
   if (data && typeof data === 'object') {
-    return Object.keys(data).reduce(
-      (obj, item) => {
-        if (flagMap[item]) {
-          const flagMapSection = flagMap[item]
-          // value map is defined
-          if (flagMapSection[data[item]]) {
-            const flags = {}
+    // set up entities and their calculation flags within the request obj
+    for(const entity in mapEntities){
+      const calculatableFieldsForEntity = {}
+      // loop over the fields to calculate array for the entity and convert to open fisca format
+      for (const benefit in mapEntities[entity]){
+        calculatableFieldsForEntity[mapEntities[entity][benefit]] = {
+          [dateString]: null,
+        }
+      }
+      fiscaRequestObj.persons[entity] = calculatableFieldsForEntity
+    }
 
-            for (const i in flagMapSection[data[item]]) {
-              flags[i] = {
-                [dateString]: flagMapSection[data[item]][i],
+    // loop over the flags map and convert data
+    for (const dataKey in mapFlags){
+      // check if the key exists in the data obj
+      const valueForDataKey = data[dataKey]
+      if ( valueForDataKey){
+        // if it does exist then for each entity we convert to the flags based on the value
+        for(const entity in mapFlags[dataKey]){
+          // if the entity exists and there is a flag map for the value
+          const flagMapForEntity = mapFlags[dataKey][entity]
+          if(fiscaRequestObj.persons[entity] && flagMapForEntity[valueForDataKey] ){
+            for (const flag in flagMapForEntity[valueForDataKey]){
+              fiscaRequestObj.persons[entity][flag] = {
+                [dateString]: flagMapForEntity[valueForDataKey][flag],
               }
             }
-
-            return {
-              ...obj,
-              ...flags,
-            }
           }
         }
-        // not present in flag map just put in object
-        else {
-          return {
-            ...obj,
-            [item]: {
-              [dateString]: data[item],
-            },
-          }
-        }
+      }
+    }
 
-        return obj
-      },
-      {
-        cerb_eligible: {
-          [dateString]: null,
-        },
-        cesb_eligible: {
-          [dateString]: null,
-        },
-        ei_workshare_eligible: {
-          [dateString]: null,
-        },
-        mortgage_deferral_eligible: {
-          [dateString]: null,
-        },
-        rent_help_eligible: {
-          [dateString]: null,
-        },
-        student_loan_eligible: {
-          [dateString]: null,
-        },
-        ccb_payment_eligible: {
-          [dateString]: null,
-        },
-        oas_eligible: {
-          [dateString]: null,
-        },
-        dtc_oas_eligible: {
-          [dateString]: null,
-        },
-        dtc_individual_eligible: {
-          [dateString]: null,
-        },
-        dtc_child_eligible: {
-          [dateString]: null,
-        },
-        rrif_eligible: {
-          [dateString]: null,
-        },
-        student_financial_aid_eligible: {
-          [dateString]: null,
-        },
-      },
-    )
+    const entitiesPresent = []
+    for (const entity in fiscaRequestObj.persons){
+      // if the number of keys for the entity is the same as the number of benefits
+      // delete the entity from the request object since there is nothing to calculate
+      if(Object.keys(fiscaRequestObj.persons[entity]).length === mapEntities[entity].length){
+        delete fiscaRequestObj.persons[entity]
+      }
+      else{
+        entitiesPresent.push(entity)
+      }
+    }
+
+     if( entitiesPresent.length > 1 && mapFamilies){
+       // add families to the request object
+       const families = {}
+       let familiesPresent = false
+       for(const family in mapFamilies){
+         const familyObj = mapFamilies[family]
+         // compare entities array, if they are the same add the family to the request obj
+         if(_.isEqual(entitiesPresent.slice().sort(), familyObj.entities.slice().sort())){
+           families[family] = familyObj.data
+           familiesPresent = true
+         }
+       }
+
+       if(familiesPresent){
+         fiscaRequestObj.families = families
+       }
+     }
+
+
   }
+
+  return fiscaRequestObj
 }
 
 module.exports = {

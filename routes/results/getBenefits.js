@@ -3,19 +3,19 @@ const path = require('path')
 
 // go through keys and push benefits which have a true key-value pair
 const getBenefits = (data) => {
-  const results = []
-  const dataKeys = Object.keys(data)
-  for (const i in Object.keys(data)) {
-    const key = dataKeys[i]
-    if (key.endsWith('_eligible')) {
-      const benefit = key.split('_eligible')
-      const valuesforBenefit = Object.values(data[key])
-      if (valuesforBenefit.length > 0 && valuesforBenefit[0] === true) {
-        results.push(benefit[0])
+  const results = {}
+  for(const entity in data){
+    for (const key in data[entity]) {
+      if (key.endsWith('_eligible')) {
+        const benefit = key.split('__is_eligible')
+        const valuesforBenefit = Object.values(data[entity][key])
+        if (valuesforBenefit.length > 0 && valuesforBenefit[0] === true) {
+          results[benefit[0]] = 1
+        }
       }
     }
   }
-  return results
+  return Object.keys(results)
 }
 
 const getProvincialBenefits = (data) => {
