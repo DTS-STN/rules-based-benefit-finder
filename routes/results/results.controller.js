@@ -35,7 +35,7 @@ const getData = (req, res) => {
       return {}
     }
   }
-  
+
   const render = (req, res, name, viewData, resData) => {
     // get All Benefits (except provinces and GST)
     if (resData) {
@@ -44,7 +44,7 @@ const getData = (req, res) => {
       'gst_credit',
     )
 
-    const benefits = getBenefits(resData.persons.person)
+    const benefits = getBenefits(resData.persons)
 
     let unavailableBenefits = benefitsFullList.filter(
       (benefit) => !benefits.includes(benefit),
@@ -87,12 +87,7 @@ module.exports = (app, route) => {
     .get((req, res) => {
       res.locals.simpleRoute = (name, locale) => simpleRoute(name, locale)
       const data = getData(req, res)
-      const dataFlags = convertToFlags(data, conversionMap)
-      const requestBody = {
-        persons: {
-          person: dataFlags,
-        },
-      }
+      const requestBody = convertToFlags(data, conversionMap)
 
       if(process.env.NODE_ENV === 'test') {
         render(req, res, name, data, testData)
@@ -109,7 +104,6 @@ module.exports = (app, route) => {
             if (fiscaRes.ok) {
               return fiscaRes.json()
             } else {
-              console.log(fiscaRes)
               res.status(500)
               res.render('500', {
                 message: 'OpenFisca returned a bad response',
