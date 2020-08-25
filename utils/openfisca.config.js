@@ -52,10 +52,22 @@ const conversionMap = {
           income_status_reason__has_employer_closed: true,
         },
         'self-employed-closed': {
-          income_status_reason__has_self_employee_with_no_income: true,
+          income_status_reason__is_self_employed: true,
         },
         'unpaid-leave-to-care': {
           income_status_reason__has_unpaid_leave_to_care_for_child_or_sick: true,
+        },
+        "sick-or-quarantied": {
+          income_status_reason__is_quarantined: true,
+        },
+        "parental-recently-cant-return": {
+          income_status_reason__has_parental_recently_cant_return_to_work: true,
+        },
+        student_2019_20:{
+          cesb__is_student_2019_2020: true,
+        },
+        "ei-recently-claim-ended": {
+          income_status_reason__has_ei_recent_claim_ended: true,
         },
       },
     },
@@ -64,32 +76,31 @@ const conversionMap = {
         'hours-reduced': {
           income_status_reason__has_hours_reduced: true,
         },
-        'selfemployed-some-income': {
-          income_status_reason__is_self_employed_some_income: true,
-        },
         'employed-lost-a-job': {
           income_status_reason__employed_lost_a_job: true,
         },
         quarantine: {
           income_status_reason__is_quarantined: true,
-          income_status_reason__has_unpaid_leave_to_care_for_child_or_sick: true,
         },
       },
     },
     unchanged_income: {
       person:{
-        wfh: {
-          working_from_home: true, // not flag for working from home
-        },
-        'paid-leave': {
-          // no flag for paid-leave
-          on_paid_leave: true,
-        },
-        student_2019_2020: {
-          is_student_2019_2020: true,
+        student_2019_20: {
+          cesb__is_student_2019_2020: true,
         },
         high_school_grad: {
-          is_high_school_grad: true,
+          cesb__is_student_2020_2021: true,
+        },
+      },
+    },
+    reduced_income: {
+      person: {
+        "1000_or_less": {
+          income_status_reason__has_1000_or_less: true,
+        },
+        "1001_or_more": {
+          income_status_reason__has_1001_or_more: true,
         },
       },
     },
@@ -107,9 +118,6 @@ const conversionMap = {
       person: {
         'over_5k': {
           income_status_reason__is_gross_income_over_5k: true,
-        },
-        '4999_or_less': {
-          income_status_reason__is_gross_income_over_5k: false,
         },
       },
     },
@@ -140,6 +148,20 @@ const conversionMap = {
         },
       },
     },
+    dtc_individual: {
+      person:{
+        yes: {
+          dtc__has_documented_disability: true,
+        },
+      },
+    },
+    dtc_child: {
+      child: {
+        yes: {
+          dtc__has_documented_disability: true,
+        },
+      },
+    },
     rrif: {
       person: {
         yes: {
@@ -152,11 +174,6 @@ const conversionMap = {
         yes: {
           canada_child_benefit__yes_or_unsure: true,
         },
-      },
-    },
-    ei_workshare: {
-      person: {
-        income_status__has_lost_some_income: true,
       },
     },
   },
