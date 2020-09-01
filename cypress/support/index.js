@@ -19,6 +19,7 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 const { A11yReporter } = require('@cdssnc/a11y-tracker-client')
+const Cypress = require('cypress')
 
 // default to not reporting
 A11yReporter.configure({
@@ -42,3 +43,7 @@ if (
 }
 
 A11yReporter.setupCypress()
+
+Cypress.Cookies.defaults({
+  whitelist: "csrftoken",
+})
