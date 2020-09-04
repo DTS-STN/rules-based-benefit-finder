@@ -13,6 +13,7 @@ const conversionMap = {
       "dtc__is_eligible",
       "student_financial_help__is_eligible",
       "riff__is_eligible",
+      "canada_child_benefit__is_eligible",
     ],
     child: [
       "dtc__is_eligible",
