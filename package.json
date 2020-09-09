@@ -30,7 +30,8 @@
     "cypress:open": "node ./node_modules/.bin/cypress open",
     "postinstall": "patch-package",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect",
+    "test-cypress": "cypress run"
   },
   "husky": {
     "hooks": {
