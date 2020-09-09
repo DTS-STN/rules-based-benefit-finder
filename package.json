@@ -20,9 +20,9 @@
     "prettier": "prettier --write '**/*.{ts,js,css,html}'",
     "test": "node node_modules/jest/bin/jest.js --coverage",
     "test:server": "cross-env nodemon --exec npm run test:server:start",
-    "test:server:start": "webpack --config webpack.dev.js && cross-env NODE_ENV=test node ./bin/www",
+    "test:server:start": "webpack --config webpack.dev.js && cross-env NODE_ENV=development node ./bin/www",
     "test:watch": "node node_modules/jest/bin/jest.js --watch",
-    "cypress:run:test": "NODE_ENV=test cypress run",
+    "cypress:run:test": "cross-env NODE_ENV=development cypress run",
     "aws": "cd cdk && cdk synth && node deploy",
     "aws-bootstrap": "node cdk/bootstrap.js",
     "aws-destroy": "node cdk/destroy.js",
@@ -30,8 +30,7 @@
     "cypress:open": "node ./node_modules/.bin/cypress open",
     "postinstall": "patch-package",
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect",
-    "test-cypress": "cypress run"
+    "prepare": "npm run snyk-protect"
   },
   "husky": {
     "hooks": {
