@@ -45,10 +45,10 @@ const conversionMap = {
     },
     no_income: {
       person: {
-        lost_job: {
+        'lost-job': {
           income_status_reason__has_lost_job: true,
         },
-        employer_closed: {
+        'employer-closed': {
           income_status_reason__has_employer_closed: true,
         },
         'self-employed-closed': {
