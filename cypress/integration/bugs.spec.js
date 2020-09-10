@@ -28,7 +28,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
       cy.answerRB('#dtcno')
-      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
+      cy.get('[data-cy=benefit-list]').children().should('have.length', '4')
       cy.get('[data-cy=cerb-benefit]')
     })
 
@@ -44,7 +44,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
       cy.answerRB('#dtcno')
-      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
+      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
       cy.get('[data-cy=rrif-benefit]')
 
       cy.visit('/en/your-situation/some-income')
@@ -55,11 +55,11 @@ describe('Found Bugs', () => {
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
       cy.answerRB('#dtcno')
-      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
+      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
       cy.get('[data-cy=cerb-benefit]')
     })
 
-    it('Check some-income retired to no-income', () => {
+    it.only('Check some-income retired to no-income', () => {
       cy.visit('/en/lost-job')
       cy.answerRB('#lost_joblost-some-income')
       cy.answerRB('#some_incomeretired')
@@ -71,7 +71,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
       cy.answerRB('#dtcno')
-      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
+      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
       cy.get('[data-cy=rrif-benefit]')
 
       cy.visit('/en/lost-job')
@@ -83,7 +83,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
       cy.answerRB('#dtcno')
-      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '11')
+      cy.get('[data-cy=benefit-list]').children().should('have.length', '4')
     })
   })
 })
