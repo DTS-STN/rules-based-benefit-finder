@@ -1,0 +1,30 @@
+{% extends "benefit-template.njk" %}
+
+{% set sectionId = 'crsb' %}
+
+{% block header %}
+  {{__("crsb.header")}}
+{% endblock %}
+
+{% block featured_list_items %}
+  {{ benefitLi("<strong>" + __('crsb.featurelist.1') + "</strong>") }}
+  {{ benefitLi(__('crsb.featurelist.2') | safe) }}
+  {{ benefitLi("<strong>" + __('crsb.featurelist.3') + "</strong>") }}
+{% endblock %}
+
+{% block body %}
+  <strong>{{__("crsb.body.title")}}</strong>
+  <ul>
+    <li>{{__("crsb.body.1")}}</li>
+    <li>{{__("crsb.body.2")}}</li>
+    <li>{{__("crsb.body.3")}}</li>
+  </ul>
+{% endblock %}
+
+{% block info_link %}
+  {{ infoLink(
+      "crsb",
+      __('crsb.infolink'),
+      __('crsb.infolink_text')
+  )}}
+{% endblock %}
