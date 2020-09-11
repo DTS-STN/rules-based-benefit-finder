@@ -28,7 +28,7 @@ const conversionMap = {
         "children": ["child"],
       },
     },
-  },
+  }, 
   flags: {
     // flags conversion for entities
     lost_job: {
@@ -58,7 +58,7 @@ const conversionMap = {
         'unpaid-leave-to-care': {
           income_status_reason__has_unpaid_leave_to_care_for_child_or_sick: true,
         },
-        "sick-or-quarantied": {
+        "sick-or-quarantined": {
           income_status_reason__is_quarantined: true,
         },
         "parental-recently-cant-return": {
@@ -69,6 +69,9 @@ const conversionMap = {
         },
         "ei-recently-claim-ended": {
           income_status_reason__has_ei_recent_claim_ended: true,
+        },
+        quarantine: {
+          income_status_reason__is_quarantined: true,
         },
       },
     },
