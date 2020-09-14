@@ -1,5 +1,5 @@
-[La version française suit.](#---------------------------------------------------------------------)
-# Find financial help during COVID-19 
+[La version française suit.](#---------------------------------------------------------------------) 
+# Find financial help during COVID-19
 
 COVID-19 has had a severe financial impact on people living in Canada. The benefit landscape is hard to navigate and is changing quickly. 
 
