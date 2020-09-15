@@ -11,12 +11,14 @@ const conversionMap = {
       "oas__is_eligible",
       "dtc__is_eligible_for_dtc_and_oas",
       "dtc__is_eligible",
+      "dtc_apply__is_eligible",
       "student_financial_help__is_eligible",
       "riff__is_eligible",
       "canada_child_benefit__is_eligible",
     ],
     child: [
       "dtc__is_eligible",
+      "dtc_apply__is_eligible",
     ],
   },
   families: {
@@ -157,12 +159,18 @@ const conversionMap = {
         yes: {
           dtc__has_documented_disability: true,
         },
+        no: {
+          dtc__has_disability: true,
+        },
       },
     },
     dtc_child: {
       child: {
         yes: {
           dtc__has_documented_disability: true,
+        },
+        no: {
+          dtc__has_disability: true,
         },
       },
     },
