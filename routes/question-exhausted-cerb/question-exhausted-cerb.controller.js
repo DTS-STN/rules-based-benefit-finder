@@ -7,7 +7,7 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {
-        title: res.__('cerb-new.title'),
+        title: res.__('cerb_new.title'),
       }))
     })
     .post(route.applySchema(Schema), postExhaustedCerb)
@@ -19,7 +19,10 @@ const postExhaustedCerb = (req, res) => {
   //   return res.redirect(res.locals.routePath('question-canada-child-benefit'))
   // }
 
-  // default no matter the answer 
-  return res.redirect(res.locals.routePath('question-ccb'))
+  // default according to the LIVE website we are redirecting to mortgage instead of CCB
+  return res.redirect(res.locals.routePath('question-mortgage-payments'))
+
+  // default according to the new flow postCERB
+  // return res.redirect(res.locals.routePath('question-ccb'))
 
 }

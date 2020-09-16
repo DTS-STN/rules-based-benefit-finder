@@ -7,7 +7,7 @@ module.exports = (app, route) => {
   route.draw(app)
     .get((req, res) => {
       res.render(name, routeUtils.getViewData(req, {
-        title: res.__('cerb-new.title'),
+        title: res.__('cerb_new.title'),
       }))
     })
     .post(route.applySchema(Schema), postReceivedCerb)

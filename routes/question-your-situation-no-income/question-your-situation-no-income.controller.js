@@ -27,6 +27,10 @@ const postNoIncome = (req, res) => {
     'rrif',
     'gross_income',
   ])
+  
+  // default next question is mortgage according to the Live website
   // return res.redirect(res.locals.routePath('question-mortgage-payments'))
-  return res.redirect(res.locals.routePath('question-received-cerb'))
+
+  // Next question according to the PostCERB flow
+  return res.redirect(res.locals.routePath('question-received-cerb'))   
 }
