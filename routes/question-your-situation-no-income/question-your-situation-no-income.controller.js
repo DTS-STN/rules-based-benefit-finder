@@ -27,5 +27,6 @@ const postNoIncome = (req, res) => {
     'rrif',
     'gross_income',
   ])
-  return res.redirect(res.locals.routePath('question-mortgage-payments'))
+  // return res.redirect(res.locals.routePath('question-mortgage-payments'))
+  return res.redirect(res.locals.routePath('question-received-cerb'))
 }
