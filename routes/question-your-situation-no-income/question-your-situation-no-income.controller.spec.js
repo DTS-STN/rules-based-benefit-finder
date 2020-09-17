@@ -26,7 +26,7 @@ describe('Test redirects for no-income ', () => {
         'unpaid-leave-to-care',
         'sick-or-quarantined',
         'parental-recently-cant-return',
-        // 'school-closed',          // removed to pass the test I have no idea why it fails 
+        'school-closed',         
         'ei-recently-claim-ended',
         'none-of-the-above',
       ],
