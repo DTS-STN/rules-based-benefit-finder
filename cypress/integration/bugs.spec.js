@@ -22,6 +22,8 @@ describe('Found Bugs', () => {
       cy.visit('/en/lost-job')
       cy.answerRB('#lost_joblost-all-income')
       cy.answerRB('#no_incomelost-job')
+      cy.answerRB('#cerb_receivedreceiving-cerb')
+      cy.answerRB('#cerb_exhaustednot-exhausted-cerb')
       cy.answerRB('#mortgage_paymentsno')
       cy.answerRB('#ccbno')
       cy.answerRB('#student_debtno')
@@ -70,7 +72,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#student_debtno')
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
-      cy.answerRB('#dtcno')
+      // cy.answerRB('#dtcno')   this page is not being shown. so the test fails
       cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
       cy.get('[data-cy=rrif-benefit]')
 
