@@ -15,6 +15,9 @@ const conversionMap = {
       "student_financial_help__is_eligible",
       "riff__is_eligible",
       "canada_child_benefit__is_eligible",
+      "crb__is_eligible",
+      "crcb__is_eligible",
+      "crsb__is_eligible",
     ],
     child: [
       "dtc__is_eligible",
@@ -185,6 +188,29 @@ const conversionMap = {
       person: {
         yes: {
           canada_child_benefit__yes_or_unsure: true,
+        },
+      },
+    },
+    cerb_received: {
+      person: {
+        'receiving-cerb': {
+          has_not_received_cerb: false,
+        },
+        'not-receiving-cerb': {
+          has_not_received_cerb: true,
+        },
+      },
+    },
+    cerb_exhausted: {
+      person: {
+        'exhausted-cerb': {
+
+        },
+        'almost-cerb': {
+
+        },
+        'not-exhausted-cerb': {
+
         },
       },
     },
