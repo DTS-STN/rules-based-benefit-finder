@@ -69,6 +69,9 @@ const conversionMap = {
         "parental-recently-cant-return": {
           income_status_reason__has_parental_recently_cant_return_to_work: true,
         },
+        "school-closed": {
+          income_status_reason__has_child_or_dependant_with_closed_school_or_daycare_or_facility_due_to_c19: true,
+        },
         student_2019_20:{
           cesb__is_student_2019_2020: true,
         },
@@ -90,6 +93,9 @@ const conversionMap = {
         },
         quarantine: {
           income_status_reason__is_quarantined: true,
+        },
+        "school-closed": {
+          income_status_reason__has_child_or_dependant_with_closed_school_or_daycare_or_facility_due_to_c19: true,
         },
       },
     },
@@ -204,13 +210,13 @@ const conversionMap = {
     cerb_exhausted: {
       person: {
         'exhausted-cerb': {
-
+          cerb__have_exausted: true,
         },
         'almost-cerb': {
-
+          cerb__payment_almost_up: true,
         },
         'not-exhausted-cerb': {
-
+          cerb__have_exausted: false,
         },
       },
     },
