@@ -440,5 +440,7 @@
   "province.saskatchewan.infolink": "https://www.saskatchewan.ca/government/health-care-administration-and-provider-resources/treatment-procedures-and-guidelines/emerging-public-health-issues/2019-novel-coronavirus/covid-19-information-for-businesses-and-workers/support-for-workers#saskatchewan-support",
   "province.saskatchewan.infolink_text": "Learn more about Saskatchewan benefits",
   "province.yukon.infolink": "https://yukon.ca/en/covid-19-support-yukoners",
-  "province.yukon.infolink_text": "Learn more about Yukon‘s response"
+  "province.yukon.infolink_text": "Learn more about Yukon‘s response",
+  ".province.newbrunswick.infolink": ".province.newbrunswick.infolink",
+  ".province.newbrunswick.infolink_text": ".province.newbrunswick.infolink_text"
 }

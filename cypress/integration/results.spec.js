@@ -53,7 +53,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
         cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '4')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '5')
         cy.get('#cerb')
         cy.get('#mortgage_deferral')
         cy.get('#student_loan')
