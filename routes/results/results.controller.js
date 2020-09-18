@@ -89,6 +89,9 @@ module.exports = (app, route) => {
       const data = getData(req, res)
       const requestBody = convertToFlags(data, conversionMap)
 
+      console.log(process.env.OPEN_FISCA_ENDPOINT);
+      console.log(JSON.stringify(requestBody));
+      
       if(process.env.NODE_ENV === 'test') {
         render(req, res, name, data, testData)
       } else {

@@ -12,9 +12,11 @@ module.exports = (app, route) => {
     })
     .post(route.applySchema(Schema), (req, res) => {
       if (req.session.formdata.some_income && req.session.formdata.some_income === 'retired') {
-        return res.redirect(res.locals.routePath('question-rrif'))
+        // return res.redirect(res.locals.routePath('question-rrif'))
+        return res.redirect(res.locals.routePath('question-received-cerb'))
       }
 
-      return res.redirect(res.locals.routePath('question-mortgage-payments'))
+      // return res.redirect(res.locals.routePath('question-mortgage-payments'))
+      return res.redirect(res.locals.routePath('question-received-cerb'))
     })
 }
