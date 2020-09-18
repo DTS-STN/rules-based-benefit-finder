@@ -207,19 +207,6 @@ const conversionMap = {
         },
       },
     },
-    cerb_exhausted: {
-      person: {
-        'exhausted-cerb': {
-          cerb__have_exausted: true,
-        },
-        'almost-cerb': {
-          cerb__payment_almost_up: true,
-        },
-        'not-exhausted-cerb': {
-          cerb__have_exausted: false,
-        },
-      },
-    },
   },
 
 }

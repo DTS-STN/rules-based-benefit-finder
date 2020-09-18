@@ -72,7 +72,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#student_debtno')
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
-      // cy.answerRB('#dtcno')   this page is not being shown. so the test fails
+      cy.answerRB('#dtcno')  
       cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
       cy.get('[data-cy=rrif-benefit]')
 
