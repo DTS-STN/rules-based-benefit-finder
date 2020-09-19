@@ -63,7 +63,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
       cy.answerRB('#dtcno')
-      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
       cy.get('[data-cy=cerb-benefit]')
     })
 
@@ -81,7 +81,7 @@ describe('Found Bugs', () => {
       cy.answerRB('#plans_for_schoolno')
       cy.answerRB('#oasno')
       cy.answerRB('#dtcno')  
-      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+      cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
       cy.get('[data-cy=rrif-benefit]')
 
       cy.visit('/en/lost-job')
