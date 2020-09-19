@@ -73,7 +73,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
         cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '1')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
         cy.get('#cerb')
       })
 
@@ -91,7 +91,7 @@ describe('Paths and Benefits', () => {
         cy.answerRB('#oasno')
         cy.answerRB('#dtcno')
         cy.reportA11y()
-        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '2')
+        cy.get('[data-cy=eligible-benefit-list]').children().should('have.length', '3')
         cy.get('#cerb')
       })
 
