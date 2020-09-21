@@ -22,7 +22,7 @@ const postExhaustedCerb = (req, res) => {
   // default according to the LIVE website we are redirecting to mortgage instead of CCB
   return res.redirect(res.locals.routePath('question-mortgage-payments'))
 
-  // default according to the new flow postCERB
+  // default according to the new flow postCERB.
   // return res.redirect(res.locals.routePath('question-ccb'))
 
 }
