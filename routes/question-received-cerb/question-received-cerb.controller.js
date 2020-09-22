@@ -21,7 +21,7 @@ const postReceivedCerb = (req, res) => {
 
   // default 
   // if (req.body.cerb_received === 'not-receiving-cerb') {
-    return res.redirect(res.locals.routePath('question-ccb'))
+    return res.redirect(res.locals.routePath('question-mortgage-payments'))
   // }
 
 }
