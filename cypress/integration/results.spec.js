@@ -14,7 +14,7 @@ describe('Result Page Only tests', () => {
         cy.get('.error').should('be.visible')  
         cy.reportA11y()
       })
-// currently open fisca returns a bad response if you send no request.
+// currently open fisca returns a bad response if you send no request
       it.skip('should display GST Benefit no matter what', () => {
         cy.visit(route('results', lang), {failOnStatusCode: false})
         cy.get('#gst_credit')
