@@ -30,7 +30,7 @@ describe('Test redirects for some-income ', () => {
       ],
     },
     {
-      dest: 'question-mortgage-payments',
+      dest: 'question-received-cerb',
       values: ['quarantine', 'none-of-the-above'],
     },
   ]
