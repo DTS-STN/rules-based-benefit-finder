@@ -1,37 +1,29 @@
 const request = require('supertest')
 const app = require('../../app.js')
 
-test('Can send get request some-income route ', async () => {
-  const route = app.routes.get('question-your-situation-some-income')
+test('Can send get request exhausted-cerb route ', async () => {
+  const route = app.routes.get('question-exhausted-cerb')
   const response = await request(app).get(route.path.en)
   expect(response.statusCode).toBe(200)
 })
 
-test('Can send post request some-income route ', async () => {
-  const route = app.routes.get('question-your-situation-some-income')
+test('Can send post request exhausted-cerb route ', async () => {
+  const route = app.routes.get('question-exhausted-cerb')
   const response = await request(app).post(route.path.en)
   expect(response.statusCode).toBe(302)
 })
 
-describe('Test redirects for some-income ', () => {
-  const route = app.routes.get('question-your-situation-some-income')
+describe('Test redirects for exhausted-cerb ', () => {
+  const route = app.routes.get('question-exhausted-cerb')
 
   const redirects = [
     {
-      dest: 'question-gross-income',
-      values: ['retired'],
-    },
-    {
-      dest: 'question-reduced-income',
+      dest: 'question-mortgage-payments',
       values: [
-        'hours-reduced',
-        'selfemployed-some-income',
-        'employed-lost-a-job',
+        'exhausted-cerb', 
+        'almost-cerb', 
+        'not-exhausted-cerb',
       ],
-    },
-    {
-      dest: 'question-received-cerb',
-      values: ['quarantine', 'none-of-the-above'],
     },
   ]
 
@@ -43,7 +35,7 @@ describe('Test redirects for some-income ', () => {
         await request(app)
           .post(route.path.en)
           .send({
-            some_income: value,
+            cerb_exhausted : value,
           })
           .expect(302)
           .then((response) => {

@@ -23,6 +23,7 @@
     "test:server:start": "webpack --config webpack.dev.js && cross-env NODE_ENV=development node ./bin/www",
     "test:watch": "node node_modules/jest/bin/jest.js --watch",
     "cypress:run:test": "cross-env NODE_ENV=development cypress run",
+    "cypress:run:test:results": "cross-env NODE_ENV=development cypress run --spec \"cypress/integration/results.spec.js\"",
     "aws": "cd cdk && cdk synth && node deploy",
     "aws-bootstrap": "node cdk/bootstrap.js",
     "aws-destroy": "node cdk/destroy.js",

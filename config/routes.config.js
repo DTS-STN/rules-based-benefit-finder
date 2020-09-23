@@ -9,6 +9,10 @@ const routes = [
   { name: 'question-your-situation-some-income', path: { en: '/your-situation/some-income', fr: '/votre-situation/revenu-partiel' } },
   { name: 'question-your-situation-unchanged-income', path: { en: '/your-situation/unchanged-income', fr: '/votre-situation/revenu-intact' } },
 
+  // new questions CERB received, CERB exhausted
+  { name: 'question-received-cerb', path: { en: '/cerb-situation/received', fr: '/cerb-situation/recu' } },
+  { name: 'question-exhausted-cerb', path: { en: '/cerb-situation/exhausted', fr: '/cerb-situation/epuise' } },
+
   // everyone ends up here (not sure of order?)
   { name: 'question-mortgage-payments', path: { en: '/mortgage-payments', fr: '/paiement-hypothecaire' } },
   { name: 'question-ccb', path: { en: '/CCB', fr: '/ARC' } },

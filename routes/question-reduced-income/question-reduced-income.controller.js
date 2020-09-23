@@ -11,6 +11,7 @@ module.exports = (app, route) => {
       }))
     })
     .post(route.applySchema(Schema), (req, res) => {
-      return res.redirect(res.locals.routePath('question-mortgage-payments'))
+      // return res.redirect(res.locals.routePath('question-mortgage-payments'))
+      return res.redirect(res.locals.routePath('question-received-cerb'))
     })
 }
